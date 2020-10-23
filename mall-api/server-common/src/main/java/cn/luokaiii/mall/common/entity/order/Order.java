@@ -19,6 +19,10 @@ public class Order extends BaseEntity {
      */
     private List<OrderGoods> goods;
     /**
+     * 订单收货地址
+     */
+    private OrderAddress address;
+    /**
      * 所属用户
      */
     private String userId;
@@ -62,5 +66,26 @@ public class Order extends BaseEntity {
          * 当前价格（真实价格）
          */
         private Long realPrice;
+    }
+
+    @Getter
+    @Setter
+    public static class OrderAddress {
+        /**
+         * 省/直辖市
+         */
+        private String province;
+        /**
+         * 城市
+         */
+        private String city;
+        /**
+         * 区/县
+         */
+        private String county;
+        /**
+         * 详细地址
+         */
+        private String details;
     }
 }

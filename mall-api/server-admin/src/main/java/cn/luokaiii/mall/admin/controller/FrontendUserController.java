@@ -17,5 +17,5 @@ public class FrontendUserController {
 
     // 5. 查询用户的评论
 
-    // 6. 查询
+    // 6. 注销该用户
 }
