@@ -31,6 +31,10 @@ public class GoodsComment extends BaseEntity {
      */
     private String goodsId;
     /**
+     * 订单ID
+     */
+    private String orderId;
+    /**
      * 用户ID
      */
     private String userId;

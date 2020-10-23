@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * 商品
@@ -33,6 +34,18 @@ public class Goods extends BaseEntity {
      * 库存
      */
     private Long stock;
+    /**
+     * 商品规格：key 规格名（如颜色、尺码等）；value 规格参数（如红色、白色、藏青色等）
+     */
+    private Map<String, List<String>> specifications;
+    /**
+     * 原始价格
+     */
+    private Long originalPrice;
+    /**
+     * 当前价格（真实价格）
+     */
+    private Long realPrice;
 
     /**
      * 参加的活动
