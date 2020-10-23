@@ -17,7 +17,7 @@ export default defineConfig({
         {
           path: '/home',
           name: '首页',
-          component: '@/pages/home/index',
+          component: '@/pages/dashboard/index',
         },
         {
           path: '/goods',
