@@ -1,7 +1,8 @@
 ---
+title: 微の商城
 hero:
-  title: 微商城
-  desc: 微微微微微型商城
+  title: 微の商城
+  desc: 微微微微微型商城の文档
   actions:
     - text: PC版商城
       link: /getting-started
@@ -21,5 +22,3 @@ features:
     desc: 用 Ant Design 开发
 footer: Open-source MIT Licensed | Copyright © 2020<br />Powered by [luokaiii](https://github.com/luokaiii/luokaiii.mall.git)
 ---
-
-## Hello dumi123
