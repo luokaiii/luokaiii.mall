@@ -1,6 +1,7 @@
 import React from 'react';
 import { Row, Col, Card, Statistic, Divider } from 'antd';
 import { ArrowUpOutlined } from '@ant-design/icons';
+import { Line } from '@ant-design/charts';
 
 export default () => {
   return (
@@ -47,6 +48,29 @@ export default () => {
             />
             <Divider style={{ margin: '12px 0' }} />
             <div>开干！</div>
+          </Card>
+        </Col>
+        <Col span={24}>
+          <Card>
+            <Line
+              data={[
+                { date: '10.14', value: 34 },
+                { date: '10.15', value: 34 },
+                { date: '10.16', value: 21 },
+                { date: '10.17', value: 35 },
+                { date: '10.18', value: 26 },
+                { date: '10.19', value: 37 },
+                { date: '10.20', value: 32 },
+                { date: '10.21', value: 64 },
+                { date: '10.22', value: 27 },
+                { date: '10.23', value: 84 },
+              ]}
+              height={400}
+              xField="date"
+              yField="value"
+              point={{ size: 5, shape: 'diamond' }}
+              label={{ style: { fill: '#aaa' } }}
+            />
           </Card>
         </Col>
       </Row>
