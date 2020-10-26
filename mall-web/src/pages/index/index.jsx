@@ -1,7 +1,12 @@
 import React from 'react';
 
+import Headers from './components/Headers';
 import './index.less';
 
 export default () => {
-  return <div>Hello World!</div>;
+  return (
+    <React.Fragment>
+      <Headers />
+    </React.Fragment>
+  );
 };
