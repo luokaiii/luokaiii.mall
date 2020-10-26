@@ -26,23 +26,16 @@ const TabBarData = [
   },
 ];
 
-const HAS_LAYOUT = ['/', '/home', '/class', '/me'];
-
 export default props => {
   const { location, children } = props;
   const { pathname } = location;
 
   const isTabBarSelect = url => {
-    if (pathname == '/' && url == '/home') {
-      return true;
-    } else {
-      return pathname === url;
-    }
+    return pathname === url;
   };
 
   return (
-    <div>
-      <NavBar>微の商城</NavBar>
+    <div style={{height: '100%'}}>
       <TabBar
         unselectedTintColor="#333"
         tintColor="#ef5f55"

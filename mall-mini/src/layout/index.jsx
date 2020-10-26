@@ -1,4 +1,6 @@
 import React from 'react';
+import 'antd-mobile/dist/antd-mobile.css';
+
 import BasicLayout from './BasicLayout';
 
 const HAS_LAYOUT = ['/', '/home', '/cart', '/me'];
