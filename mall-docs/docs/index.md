@@ -5,11 +5,11 @@ hero:
   desc: 微微微微微型商城の文档
   actions:
     - text: PC版商城
-      link: /getting-started
+      link: /pc
     - text: H5版商城
-      link: /getting-started
+      link: /h5
     - text: 后台管理
-      link: /getting-started
+      link: /admin
 features:
   - icon: https://gw.alipayobjects.com/zos/bmw-prod/881dc458-f20b-407b-947a-95104b5ec82b/k79dm8ih_w144_h144.png
     title: PC商城
