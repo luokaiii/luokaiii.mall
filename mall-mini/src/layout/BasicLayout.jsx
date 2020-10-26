@@ -72,7 +72,7 @@ export default props => {
               selected={isSelect}
               data-seed="logId"
             >
-              {isSelect && children}
+              {children}
             </TabBar.Item>
           );
         })}
