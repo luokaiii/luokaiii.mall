@@ -1,0 +1,45 @@
+.category-comp {
+  color: #333333;
+  position: relative;
+  img {
+    width: 100%;
+  }
+
+  &_menu_list {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    height: 100%;
+    width: 234px;
+    font-size: 15px;
+    color: #ffffff;
+    background-color: #00000070;
+    ul {
+      padding: 10px 0;
+      li {
+        padding: 0 26px;
+        display: flex;
+        justify-content: space-between;
+        line-height: 43px;
+        cursor: pointer;
+        &:hover {
+          background-color: #ff6700;
+        }
+      }
+    }
+  }
+
+  &_sub_list {
+    position: absolute;
+    top: 0;
+    left: 234px;
+    z-index: 5;
+    background-color: #ffffff;
+    height: 100%;
+    width: calc(100% - 234px);
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.18);
+    padding: 10px;
+  }
+}
