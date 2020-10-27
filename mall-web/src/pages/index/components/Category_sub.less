@@ -1,0 +1,44 @@
+.category_sub_comp {
+  display: flex;
+
+  .category_sub_content {
+    padding: 0;
+    margin-top: 14px;
+
+    li {
+      float: left;
+      margin-left: 14px;
+
+      img {
+        display: block;
+        width: 308px;
+        height: 170px;
+      }
+    }
+
+    &_channel {
+      margin-top: 14px;
+      width: 234px;
+      height: 170px;
+      background-color: #5f5750;
+      text-align: center;
+      font-size: 12px;
+      padding: 3px;
+
+      &_grid {
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
+
+        a {
+          display: block;
+          color: #ffffff80;
+          &:hover {
+            color: #ffffff;
+          }
+        }
+      }
+    }
+  }
+}
