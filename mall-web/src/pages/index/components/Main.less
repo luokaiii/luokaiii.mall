@@ -1,9 +1,11 @@
 .main-comp {
+  height: 100%;
   background-color: #f5f5f5;
-
+  
   // 子模块
   .main-module {
     padding: 0 10px;
+    background-color: #f5f5f5;
 
     &_header {
       display: flex;
@@ -42,21 +44,69 @@
       grid-template-columns: repeat(5, 1fr);
       grid-gap: 15px;
       text-align: center;
-      grid-auto-rows: minmax(100px, auto);
+      grid-auto-rows: minmax(260px, auto);
     }
 
     &_item {
       background-color: #ffffff;
+      transition: all 0.5s;
+      cursor: pointer;
+      padding: 20px 0;
+      text-align: center;
+
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      &_cover {
+        margin: 0 auto 18px;
+        width: 160px;
+        height: 160px;
+        img {
+          width: 160px;
+          height: 160px;
+        }
+      }
+      &_title {
+        margin: 0 10px 2px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+      &_desc {
+        margin: 0 10px 10px;
+        height: 18px;
+        font-size: 12px;
+        color: #b0b0b0;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+      &_price {
+        margin: 0 10px 14px;
+        text-align: center;
+        color: #ff6700;
+      }
     }
 
     &_item_larger {
+      padding: 0;
       grid-column: 1;
       grid-row-start: 1;
       grid-row-end: 3;
     }
 
     &_footer {
-      padding: 20px 0;
+      margin: 22px 0;
+      div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #b0b0b0;
+        height: 120px;
+        cursor: pointer;
+      }
     }
   }
 }

@@ -10,9 +10,9 @@ import './index.less';
 export default () => {
   return (
     <React.Fragment>
-      {/* <Headers />
+      <Headers />
       <Category />
-      <SubCategory /> */}
+      <SubCategory />
       <Main />
     </React.Fragment>
   );
