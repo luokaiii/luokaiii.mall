@@ -11,6 +11,14 @@ const RenderItem = ({ item }) => {
     );
   }
 
+  if (type == 'picture') {
+    return (
+      <div className="main-module_item main-module_item_picture">
+        <img src={item.cover} />
+      </div>
+    );
+  }
+
   return (
     <div className="main-module_item" key={item.title}>
       <div className="main-module_item_cover">
@@ -40,7 +48,7 @@ export default ({ data }) => {
       </div>
       <div className="main-module_footer">
         <div>
-          <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/47addc32aff1d2a84fc4535707190881.jpg?thumb=1&w=1226&h=120&f=webp&q=90" />
+          <img src={data.footer} alt />
         </div>
       </div>
     </div>
