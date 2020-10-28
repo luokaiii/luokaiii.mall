@@ -9,17 +9,8 @@ nav:
 
 项目地址：[http://mall.luokaiii.cn](http://mall.luokaiii.cn)
 
-项目演示：
-
-```jsx
-import React from 'react';
-
-export default () => {
-  return (
-    <iframe
-      src="http://mall.luokaiii.cn"
-      style={{ width: '100%', border: 'none', height: '600px' }}
-    />
-  );
-};
-```
+- 首页：[http://mall.luokaiii.cn](http://mall.luokaiii.cn)
+- 登录、注册页：[http://mall.luokaiii.cn/login](http://mall.luokaiii.cn)
+- 分类页：[http://mall.luokaiii.cn/cate](http://mall.luokaiii.cn)
+- 商品详情页：[http://mall.luokaiii.cn/details/1](http://mall.luokaiii.cn)
+- 购物车页：[http://mall.luokaiii.cn/cart](http://mall.luokaiii.cn)
