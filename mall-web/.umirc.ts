@@ -12,4 +12,11 @@ export default defineConfig({
     { path: '/cart', name: '微の商城 | 购物车', component: '@/pages/cart' },
     { path: '/details/:id', name: '微の商城', component: '@/pages/details' },
   ],
+  proxy: {
+    '/api': {
+      'target': 'http://localhost:8071/',
+      'changeOrigin': true,
+      'pathRewrite': { '^/api' : '' },
+    },
+  },
 });
