@@ -8,7 +8,7 @@ export default () => {
     <header>
       <div className="content header-comp">
         <div className="header-comp_left">
-
+          <img src={require('@/static/logo.png')} />
         </div>
         <div className="header-comp_center">
           <a>小米手机</a>
