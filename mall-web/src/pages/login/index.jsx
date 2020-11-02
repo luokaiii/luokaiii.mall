@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'umi';
 import axios from 'axios';
 import { message } from 'antd';
 import { WechatOutlined, GithubOutlined } from '@ant-design/icons';
@@ -17,7 +18,9 @@ export default () => {
   return (
     <div style={{ height: '100vh' }}>
       <div className="logo-view">
-        <img src={require('@/static/logo.png')} />
+        <Link to="/">
+          <img src={require('@/static/logo.png')} alt="logo" />
+        </Link>
       </div>
       <div className="openid_auth">
         <h1>第三方登录</h1>
