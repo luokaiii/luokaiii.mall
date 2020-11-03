@@ -1,8 +1,8 @@
 import React from 'react';
 import { SearchOutlined, ShoppingCartOutlined } from '@ant-design/icons';
+import { Link, history } from 'umi';
 
 import './Headers.less';
-import { Link } from 'umi';
 
 export default () => {
   return (
@@ -20,7 +20,7 @@ export default () => {
         </div>
       </div>
       <div className="content header-comp">
-        <div className="header-comp_left">
+        <div className="header-comp_left" onClick={() => history.push('/')}>
           <img src={require('@/static/logo.png')} />
         </div>
         <div className="header-comp_center">

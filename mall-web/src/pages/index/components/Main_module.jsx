@@ -1,5 +1,6 @@
 import React from 'react';
 import { RightCircleFilled } from '@ant-design/icons';
+import { history } from 'umi';
 
 const RenderItem = ({ item }) => {
   const type = item.type;
@@ -20,7 +21,11 @@ const RenderItem = ({ item }) => {
   }
 
   return (
-    <div className="main-module_item" key={item.title}>
+    <div
+      className="main-module_item"
+      key={item.title}
+      onClick={() => history.push('/details/001')}
+    >
       <div className="main-module_item_cover">
         <img src={item.cover} alt="" />
       </div>
