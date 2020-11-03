@@ -4,6 +4,9 @@ export default defineConfig({
   nodeModulesTransform: {
     type: 'none',
   },
+  antd: {
+    config: {}
+  },
   exportStatic: {},
   routes: [
     { path: '/', name: '微の商城', component: '@/pages/index' },
@@ -14,9 +17,9 @@ export default defineConfig({
   ],
   proxy: {
     '/api': {
-      'target': 'http://localhost:8071/',
-      'changeOrigin': true,
-      'pathRewrite': { '^/api' : '' },
+      target: 'http://localhost:8071/',
+      changeOrigin: true,
+      pathRewrite: { '^/api': '' },
     },
   },
 });

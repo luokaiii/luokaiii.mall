@@ -1,5 +1,5 @@
 import React from 'react';
-import { SearchOutlined } from '@ant-design/icons';
+import { SearchOutlined, ShoppingCartOutlined } from '@ant-design/icons';
 
 import './Headers.less';
 import { Link } from 'umi';
@@ -7,24 +7,16 @@ import { Link } from 'umi';
 export default () => {
   return (
     <header>
-      <div
-        style={{
-          lineHeight: '40px',
-          background: '#f2f2f2',
-        }}
-      >
-        <div
-          className="content"
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            lineHeight: '40px',
-            background: '#f2f2f2',
-            padding: '0 20px',
-          }}
-        >
+      <div className="header-bar">
+        <div className="content header-bar_content">
           <div>本网站仅做学习使用，所有数据均为测试数据。</div>
-          <Link to="/login">登录</Link>
+          <div>
+            <Link to="/login">登录</Link>
+            <Link to="/cart">
+              <ShoppingCartOutlined />
+              购物车
+            </Link>
+          </div>
         </div>
       </div>
       <div className="content header-comp">

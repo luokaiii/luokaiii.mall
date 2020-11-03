@@ -1,0 +1,127 @@
+.details-page {
+  // 顶部标题
+  .details-header {
+    height: 63px;
+    line-height: 63px;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.07);
+    .content {
+      display: flex;
+      justify-content: space-between;
+
+      a {
+        color: #757575;
+        padding: 0 10px;
+
+        &:hover {
+          color: #ff6700;
+        }
+      }
+    }
+  }
+
+  // 内容区域
+  .details-main {
+    display: flex;
+    padding: 32px 0;
+
+    // 左侧轮播图
+    &_left {
+      display: inline-block;
+      width: 50%;
+      padding: 30px;
+      img {
+        width: 560px;
+      }
+    }
+
+    // 右侧描述信息
+    &_right {
+      display: inline-block;
+      width: 50%;
+
+      .details_text_1 {
+        font-size: 24px;
+        padding-top: 8px;
+        color: #212121;
+      }
+      .details_text_2 {
+        color: #b0b0b0;
+        padding-top: 8px;
+        line-height: 1.5;
+      }
+      .details_text_3 {
+        color: #ff6700;
+        margin-top: 1em;
+      }
+      .details_text_4 {
+        font-size: 18px;
+        line-height: 1;
+        color: #ff6700;
+        padding: 12px 0;
+      }
+      .details_text_title {
+        font-size: 18px;
+        display: flex;
+        justify-content: space-between;
+        span:last-child {
+          color: #ff6700;
+          font-size: 14px;
+          cursor: pointer;
+        }
+      }
+      .details_option_list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+        margin: 10px 0 20px;
+        text-align: center;
+        .details_option_item {
+          margin: 0;
+          height: 42px;
+          line-height: 42px;
+          border: 1px solid #e0e0e0;
+          cursor: pointer;
+          transition: all 0.3s;
+
+          &:hover {
+            color: #ff6700;
+            border-color: #ff6700;
+          }
+        }
+      }
+      .details_choose_content {
+        background-color: #f9f9fa;
+        padding: 30px;
+        margin-bottom: 30px;
+        .details_choose_item {
+          line-height: 30px;
+          display: flex;
+          justify-content: space-between;
+        }
+        .details_choose_price {
+          font-size: 24px;
+          color: #ff6700;
+          padding-top: 20px;
+        }
+      }
+      .details_btn_list {
+        .details_join_btn {
+          width: 298px;
+          height: 52px;
+          line-height: 52px;
+          font-size: 16px;
+          background: #ff6700;
+          border-color: #ff6700;
+          border-radius: 0;
+          color: #ffffff;
+        }
+      }
+
+      .ff6700 {
+        color: #ff6700;
+      }
+    }
+  }
+}
