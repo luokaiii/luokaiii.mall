@@ -4,6 +4,7 @@ import { RightOutlined } from '@ant-design/icons';
 
 import { ImgList, CategoryList } from './Category_data';
 import './Category.less';
+import { history } from 'umi';
 
 export default () => {
   const [subIndex, setSubIndex] = React.useState(0);
@@ -23,7 +24,11 @@ export default () => {
       <div className="category-comp_menu_list">
         <ul>
           {CategoryList.map((item, index) => (
-            <li key={item.title} onMouseEnter={() => onMouseEnter(index)}>
+            <li
+              key={item.title}
+              onMouseEnter={() => onMouseEnter(index)}
+              onClick={() => history.push('/cate')}
+            >
               <div>{item.title}</div>
               <div>
                 <RightOutlined />
