@@ -22,7 +22,7 @@ const RenderItem = ({ item }) => {
   return (
     <div className="main-module_item" key={item.title}>
       <div className="main-module_item_cover">
-        <img src={item.cover} alt />
+        <img src={item.cover} alt="" />
       </div>
       <div className="main-module_item_title">{item.title}</div>
       <div className="main-module_item_desc">{item.desc}</div>
@@ -42,13 +42,13 @@ export default ({ data }) => {
         </div>
       </div>
       <div className="main-module_content">
-        {data.list.map(item => (
-          <RenderItem key={item.title} item={item} />
+        {data.list.map((item, index) => (
+          <RenderItem key={index} item={item} />
         ))}
       </div>
       <div className="main-module_footer">
         <div>
-          <img src={data.footer} alt />
+          <img src={data.footer} alt="" />
         </div>
       </div>
     </div>

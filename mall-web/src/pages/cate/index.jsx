@@ -2,6 +2,8 @@ import React from 'react';
 import { DownCircleOutlined } from '@ant-design/icons';
 import { history, Link } from 'umi';
 
+import Headers from '../components/Headers';
+import Footer from '../components/Footer';
 import { Categories } from './data';
 import './index.less';
 
@@ -33,19 +35,23 @@ const RenderSection = ({ item }) => {
 
 export default () => {
   return (
-    <div className="cate-page">
-      <header className="cate-header">
-        <div className="content">
-          <Link to="/">首页</Link>
-          <span> / </span>
-          <span>全部商品分类</span>
-        </div>
-      </header>
-      <section className="content cate-content">
-        {Categories.map((item, iIndex) => (
-          <RenderSection key={iIndex} item={item} />
-        ))}
-      </section>
-    </div>
+    <main>
+      <Headers />
+      <div className="cate-page">
+        <header className="cate-header">
+          <div className="content">
+            <Link to="/">首页</Link>
+            <span> / </span>
+            <span>全部商品分类</span>
+          </div>
+        </header>
+        <section className="content cate-content">
+          {Categories.map((item, iIndex) => (
+            <RenderSection key={iIndex} item={item} />
+          ))}
+        </section>
+      </div>
+      <Footer />
+    </main>
   );
 };
