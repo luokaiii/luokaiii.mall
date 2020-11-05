@@ -19,6 +19,10 @@ export const ACTIONS = {
    */
   REMOVE_GOODS: 'REMOVE_GOODS',
   /**
+   * 单选
+   */
+  CHECK_ONE: 'CHECK_ONE',
+  /**
    * 全选
    */
   CHECK_ALL: 'CHECK_ALL',
@@ -30,7 +34,12 @@ export default (state, { type, payload }) => {
   var result = state;
   switch (type) {
     case ACTIONS.INIT:
-      return localStorage.getItem('cart') || {};
+      return payload;
+    // return (
+    //   localStorage.getItem('cart') || {
+    //     goods: [],
+    //   }
+    // );
     case ACTIONS.ADD_GOODS:
       result = produce(state, draftState => {
         if (!Array.isArray(draftState.goods)) {
@@ -50,10 +59,19 @@ export default (state, { type, payload }) => {
         draftState.goods[payload.index].count = payload.count;
       });
       break;
+    case ACTIONS.CHECK_ONE:
+      result = produce(state, draftState => {
+        draftState.goods[payload.index].checked = payload.checked;
+      });
+      break;
     case ACTIONS.CHECK_ALL:
       result = produce(state, draftState => {
         draftState.goods.forEach(good => {
-          good.checked = true;
+          if (payload.checked) {
+            good.checked = true;
+          } else {
+            good.checked = false;
+          }
         });
       });
       break;
@@ -61,6 +79,7 @@ export default (state, { type, payload }) => {
       return state;
   }
   // 每次操作完后，需要保存到storage中，再返回
+  // TODO: localStorage 只能存储字符串，object需要转义之后保存
   localStorage.setItem('cart', result);
   return result;
 };
