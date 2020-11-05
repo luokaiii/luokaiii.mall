@@ -1,6 +1,13 @@
 import React from 'react';
+import { history } from 'umi';
 
 import './Category_sub.less';
+
+const SubList = [
+  'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/e5f20a62c3d5b3d6806bd51ab6c5dd12.jpg?w=632&h=340',
+  'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/8a43378b96501d7e227a9018fe2668c5.jpg?w=632&h=340',
+  'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/793913688bfaee26b755a0b0cc8575fd.jpg?w=632&h=340',
+];
 
 export default () => {
   return (
@@ -28,24 +35,11 @@ export default () => {
         </div>
       </div>
       <ul className="category_sub_content">
-        <li>
-          <img
-            src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/e5f20a62c3d5b3d6806bd51ab6c5dd12.jpg?w=632&h=340"
-            alt=""
-          />
-        </li>
-        <li>
-          <img
-            src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/8a43378b96501d7e227a9018fe2668c5.jpg?w=632&h=340"
-            alt=""
-          />
-        </li>
-        <li>
-          <img
-            src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/793913688bfaee26b755a0b0cc8575fd.jpg?w=632&h=340"
-            alt=""
-          />
-        </li>
+        {SubList.map(item => (
+          <li key={item} onClick={() => history.push('/details/001')}>
+            <img src={item} alt="" />
+          </li>
+        ))}
       </ul>
     </div>
   );
