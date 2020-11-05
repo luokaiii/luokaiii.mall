@@ -21,8 +21,7 @@ export default () => {
           <div className="cart-main_table">
             <div className="cart-main_table_item">
               <div>
-                <Checkbox />
-                全选
+                <Checkbox /> 全选
               </div>
               <div>商品名称</div>
               <div>单价</div>

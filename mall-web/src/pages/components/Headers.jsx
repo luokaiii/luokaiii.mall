@@ -9,7 +9,9 @@ export default () => {
     <header>
       <div className="header-bar">
         <div className="content header-bar_content">
-          <div>本网站仅做学习使用，所有数据均为测试数据。</div>
+          <div>
+            本网站仅做学习使用，所有数据均为测试数据。除商品数据固定外，所有交互数据均保存于storage中。
+          </div>
           <div>
             <Link to="/login">登录</Link>
             <Link to="/cart">
