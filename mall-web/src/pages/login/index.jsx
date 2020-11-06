@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 import { Form, message, Input, Button, Divider } from 'antd';
 import {
   WechatOutlined,
@@ -7,6 +6,7 @@ import {
   QqOutlined,
   AlibabaOutlined,
 } from '@ant-design/icons';
+// import WxLogin from './wxLogin';
 
 import Headers from '../components/Headers';
 import Footer from '../components/Footer';
@@ -14,11 +14,8 @@ import './index.less';
 
 export default () => {
   const getOAuth2Render = type => {
-    axios.get(`/api/oauth2/${type}/render`).then(res => {
-      if (res.data) {
-        window.open(res.data);
-      }
-    });
+    const obj = require('./wxLogin');
+    console.log(obj);
   };
 
   return (
@@ -50,7 +47,7 @@ export default () => {
             </div>
             <div className="login-page_right_openid">
               <GithubOutlined />
-              <WechatOutlined />
+              <WechatOutlined onClick={getOAuth2Render} />
               <QqOutlined />
               <AlibabaOutlined />
             </div>
