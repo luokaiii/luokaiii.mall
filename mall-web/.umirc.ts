@@ -5,12 +5,17 @@ export default defineConfig({
     type: 'none',
   },
   antd: {
-    config: {}
+    config: {},
   },
   exportStatic: {},
   routes: [
     { path: '/', name: '微の商城', component: '@/pages/index' },
-    { path: '/login', name: '微の商城 | 登录', component: '@/pages/login' },
+    {
+      path: '/login',
+      exact: false,
+      name: '微の商城 | 登录',
+      component: '@/pages/login',
+    },
     { path: '/cate', name: '微の商城 | 全部分类', component: '@/pages/cate' },
     { path: '/cart', name: '微の商城 | 购物车', component: '@/pages/cart' },
     { path: '/details/001', name: '微の商城', component: '@/pages/details' },
