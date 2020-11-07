@@ -7,6 +7,7 @@ import './Headers.less';
 export default () => {
   return (
     <header>
+      {/* 顶部提示，登录，购物车 */}
       <div className="header-bar">
         <div className="content header-bar_content">
           <div>
@@ -21,6 +22,7 @@ export default () => {
           </div>
         </div>
       </div>
+      {/* 内容 */}
       <div className="content header-comp">
         <div className="header-comp_left" onClick={() => history.push('/')}>
           <img src={require('@/static/logo.png')} />
@@ -40,6 +42,49 @@ export default () => {
           <button>
             <SearchOutlined />
           </button>
+        </div>
+      </div>
+      {/* 悬浮区域 */}
+      <div className="header-float">
+        <div className="content">
+          <div className="header-float_item">
+            <div>
+              <img
+                src="//cdn.cnbj1.fds.api.mi-img.com/mi-mall/5ca871528d3420622f21f25be7aba58c.png"
+                alt=""
+              />
+            </div>
+            <div className="header-float_item_title">小米10 至尊纪念版</div>
+            <div className="header-float_item_price">5699 起</div>
+          </div>
+          <div className="header-float_item">
+            <div>
+              <img
+                src="//cdn.cnbj1.fds.api.mi-img.com/mi-mall/5ca871528d3420622f21f25be7aba58c.png"
+                alt=""
+              />
+            </div>
+            <div className="header-float_item_title">小米10 至尊纪念版</div>
+            <div className="header-float_item_price">5699 起</div>
+          </div><div className="header-float_item">
+            <div>
+              <img
+                src="//cdn.cnbj1.fds.api.mi-img.com/mi-mall/5ca871528d3420622f21f25be7aba58c.png"
+                alt=""
+              />
+            </div>
+            <div className="header-float_item_title">小米10 至尊纪念版</div>
+            <div className="header-float_item_price">5699 起</div>
+          </div><div className="header-float_item">
+            <div>
+              <img
+                src="//cdn.cnbj1.fds.api.mi-img.com/mi-mall/5ca871528d3420622f21f25be7aba58c.png"
+                alt=""
+              />
+            </div>
+            <div className="header-float_item_title">小米10 至尊纪念版</div>
+            <div className="header-float_item_price">5699 起</div>
+          </div>
         </div>
       </div>
     </header>
