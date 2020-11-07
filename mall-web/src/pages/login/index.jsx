@@ -32,16 +32,6 @@ export default () => {
               exact
               component={props => <WeChatLogin {...props} />}
             />
-
-            <div className="login-page_right_openid">
-              <Link to="/login/wechat">
-                <WechatOutlined />
-              </Link>
-              <GithubOutlined />
-
-              <QqOutlined />
-              <AlibabaOutlined />
-            </div>
           </div>
         </div>
       </div>
@@ -70,47 +60,56 @@ const FormLogin = () => {
         <Divider type="vertical" />
         <a>忘记密码？</a>
       </div>
+      <div className="login-page_right_openid">
+        <Link to="/login/wechat">
+          <WechatOutlined />
+        </Link>
+        <GithubOutlined />
+
+        <QqOutlined />
+        <AlibabaOutlined />
+      </div>
     </div>
   );
 };
 
 const WeChatLogin = () => {
-  // React.useEffect(() => {
-  //   var script = document.createElement('script');
-  //   script.type = 'text/javascript';
-  //   script.async = false;
-  //   script.src =
-  //     'https://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js';
-  //   document.head.appendChild(script);
+  React.useEffect(() => {
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.async = false;
+    script.src =
+      'https://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js';
+    document.head.appendChild(script);
 
-  //   setTimeout(() => {
-  //     var customeStyle =
-  //       'data:text/css;base64,Lnd4X3FyY29kZSBpZnJhbWUgeyB3aWR0aDogMTYwcHg7IGhlaWdodDogMTYwcHg7IG1hcmdpbjogMDsgcGFkZGluZzogMDsgfQ0KLmxvZ2luUGFuZWwgeyBtYXJnaW46MDsgcGFkZGluZzogMDsgfQ0KLmxvZ2luUGFuZWwgLnRpdGxlLCAubG9naW5QYW5lbCAuaW5mbyB7IGRpc3BsYXk6IG5vbmU7IH0NCi5pbXBvd2VyQm94IC5xcmNvZGUgeyBtYXJnaW46IDA7IHdpZHRoOiAxNjBweDsgYm9yZGVyOiBub25lOyB9';
-  //     new WxLogin({
-  //       self_redirect: false,
-  //       id: 'wx_login_container',
-  //       appid: '', // 微信开放平台申请的 APPID
-  //       scope: 'snsapi_login',
-  //       redirect_uri: encodeURI(
-  //         '', // 配置的回调域下的接口
-  //       ),
-  //       state: '' + new Date().getTime(),
-  //       style: 'black',
-  //       href: customeStyle,
-  //     });
+    setTimeout(() => {
+      var customeStyle =
+        'data:text/css;base64,Lnd4X3FyY29kZSBpZnJhbWUgeyB3aWR0aDogMTYwcHg7IGhlaWdodDogMTYwcHg7IG1hcmdpbjogMDsgcGFkZGluZzogMDsgfQ0KLmxvZ2luUGFuZWwgeyBtYXJnaW46MDsgcGFkZGluZzogMDsgfQ0KLmxvZ2luUGFuZWwgLnRpdGxlLCAubG9naW5QYW5lbCAuaW5mbyB7IGRpc3BsYXk6IG5vbmU7IH0NCi5pbXBvd2VyQm94IC5xcmNvZGUgeyBtYXJnaW46IDA7IHdpZHRoOiAxNjBweDsgYm9yZGVyOiBub25lOyB9';
+      new WxLogin({
+        self_redirect: false,
+        id: 'wx_login_container',
+        appid: 'wx29250ef2eeb4da78', // 微信开放平台申请的 APPID
+        scope: 'snsapi_login',
+        redirect_uri: encodeURI(
+          'https://kegaixing.com/api/oauth2/wechat_open/callback', // 配置的回调域下的接口
+        ),
+        state: '' + new Date().getTime(),
+        style: 'black',
+        href: customeStyle,
+      });
 
-  //     var qrcodeBox = document.getElementById('wx_login_container');
-  //     var iframes = qrcodeBox.getElementsByTagName('iframe');
-  //     if (iframes.length) {
-  //       var ifr = iframes[0];
-  //       ifr.setAttribute('height', '300px');
-  //       ifr.setAttribute(
-  //         'sandbox',
-  //         'allow-scripts allow-top-navigation allow-same-origin',
-  //       );
-  //     }
-  //   }, 1000);
-  // }, []);
+      var qrcodeBox = document.getElementById('wx_login_container');
+      var iframes = qrcodeBox.getElementsByTagName('iframe');
+      if (iframes.length) {
+        var ifr = iframes[0];
+        ifr.setAttribute('height', '200px');
+        ifr.setAttribute(
+          'sandbox',
+          'allow-scripts allow-top-navigation allow-same-origin',
+        );
+      }
+    }, 1000);
+  }, []);
 
   return (
     <div>
@@ -126,7 +125,9 @@ const WeChatLogin = () => {
         <p style={{ fontSize: '14px', color: '#00000060', marginTop: '10px' }}>
           二维码为示例静态图
         </p>
-        <p style={{ fontSize: '14px', color: '#00000060' }}>具体实现请见 wxLogin.js</p>
+        <p style={{ fontSize: '14px', color: '#00000060' }}>
+          具体实现请见 wxLogin.js
+        </p>
       </div>
     </div>
   );
