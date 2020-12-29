@@ -4,7 +4,19 @@ import { Link, history } from 'umi';
 
 import './Headers.less';
 
+const cates = [
+  '手机',
+  '老人机',
+  '电视',
+  '笔记本',
+  '家电',
+  '路由器',
+  '智能穿戴',
+];
+
 export default () => {
+  const [mousePos, setMousePos] = React.useState({ link: false, block: false });
+
   return (
     <header>
       {/* 顶部提示，登录，购物车 */}
@@ -29,13 +41,20 @@ export default () => {
         </div>
         <div className="header-comp_center">
           <Link to="/cate">全部分类</Link>
-          <a>手机</a>
-          <a>老人机</a>
-          <a>电视</a>
-          <a>笔记本</a>
-          <a>家电</a>
-          <a>路由器</a>
-          <a>智能穿戴</a>
+          {cates.map(item => (
+            <a
+              className="header-comp_center_link"
+              key={item}
+              onMouseEnter={() =>
+                setMousePos({ link: true, block: mousePos.block })
+              }
+              onMouseOut={() =>
+                setMousePos({ link: false, block: false })
+              }
+            >
+              {item}
+            </a>
+          ))}
         </div>
         <div className="header-comp_right">
           <input placeholder="小米10至尊纪念版" />
@@ -45,7 +64,12 @@ export default () => {
         </div>
       </div>
       {/* 悬浮区域 */}
-      <div className="header-float">
+      <div
+        onMouseEnter={() => setMousePos({ link: mousePos.link, block: true })}
+        onMouseLeave={() => setMousePos({ link: false, block: false })}
+        className="header-float"
+        style={{ display: mousePos.link || mousePos.block ? 'block' : 'none' }}
+      >
         <div className="content">
           <div className="header-float_item">
             <div>
@@ -66,7 +90,8 @@ export default () => {
             </div>
             <div className="header-float_item_title">小米10 至尊纪念版</div>
             <div className="header-float_item_price">5699 起</div>
-          </div><div className="header-float_item">
+          </div>
+          <div className="header-float_item">
             <div>
               <img
                 src="//cdn.cnbj1.fds.api.mi-img.com/mi-mall/5ca871528d3420622f21f25be7aba58c.png"
@@ -75,7 +100,8 @@ export default () => {
             </div>
             <div className="header-float_item_title">小米10 至尊纪念版</div>
             <div className="header-float_item_price">5699 起</div>
-          </div><div className="header-float_item">
+          </div>
+          <div className="header-float_item">
             <div>
               <img
                 src="//cdn.cnbj1.fds.api.mi-img.com/mi-mall/5ca871528d3420622f21f25be7aba58c.png"
