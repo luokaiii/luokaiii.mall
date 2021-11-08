@@ -10,6 +10,7 @@ export default defineConfig({
   exportStatic: {},
   routes: [
     { path: '/', name: '微の商城', component: '@/pages/index' },
+    { path: '/test', name: '微の商城', component: '@/pages/test' },
     {
       path: '/login',
       exact: false,
