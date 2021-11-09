@@ -105,22 +105,33 @@ export default defineConfig({
           ],
         },
         {
-          path: '/system',
+          path: '/statistics',
+          name: '统计图表',
+          routes: [
+            {
+              path: '/statistics/pageview',
+              name: '流量统计',
+              component: '@/pages/statistics/pageview/index',
+            },
+          ],
+        },
+        {
+          path: '/settings',
           name: '后台管理',
           component: '@/pages/home/index',
           routes: [
             {
-              path: '/system/users',
+              path: '/settings/users',
               name: '账户管理',
               component: '@/pages/home/index',
             },
             {
-              path: '/system/roles',
+              path: '/settings/roles',
               name: '权限管理',
               component: '@/pages/home/index',
             },
             {
-              path: '/system/menus',
+              path: '/settings/menus',
               name: '菜单管理',
               component: '@/pages/home/index',
             },
