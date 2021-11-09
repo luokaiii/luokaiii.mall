@@ -1,4 +1,5 @@
 {
+  "name": "mall-web",
   "private": true,
   "scripts": {
     "start": "umi dev",
@@ -23,6 +24,7 @@
     "@ant-design/icons": "^4.2.2",
     "@ant-design/pro-layout": "^5.0.12",
     "@umijs/preset-react": "1.x",
+    "@umijs/plugin-qiankun": "^2.35.2",
     "@umijs/test": "^3.2.16",
     "antd": "^4.7.3",
     "axios": "^0.21.0",

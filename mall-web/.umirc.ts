@@ -8,6 +8,9 @@ export default defineConfig({
     config: {},
   },
   exportStatic: {},
+  qiankun: {
+    slave: {},
+  },
   routes: [
     { path: '/', name: '微の商城', component: '@/pages/index' },
     { path: '/test', name: '微の商城', component: '@/pages/test' },

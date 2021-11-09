@@ -5,6 +5,9 @@ export default defineConfig({
     type: 'none',
   },
   exportStatic: {},
+  qiankun: {
+    slave: {},
+  },
   routes: [
     {
       path: '/',

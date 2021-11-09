@@ -1,23 +1,22 @@
-import React, { useState } from 'react';
-import ProLayout, { WaterMark } from '@ant-design/pro-layout';
+import React from 'react';
+import ProLayout from '@ant-design/pro-layout';
 import { Link } from 'umi';
 
-import './index.less';
+import settings from './layoutSettings';
 
-const menuDataRender = menuList =>
-  menuList.map(item => {
+const menuDataRender = (menuList) =>
+  menuList.map((item) => {
     return {
       ...item,
       children: item.children ? menuDataRender(item.children) : [],
     };
   });
 
-export default props => {
+export default (props) => {
   const { children } = props;
 
   return (
     <ProLayout
-      title="微の商城-后台"
       menuItemRender={(menuItemProps, defaultDom) => {
         if (menuItemProps.isUrl) {
           return defaultDom;
@@ -33,13 +32,11 @@ export default props => {
           <span>{route.breadcrumbName}</span>
         );
       }}
-      rightContentRender={() => (
-        <div style={{ marginRight: '24px' }}>欢迎光临，大猪蹄子！</div>
-      )}
       menuDataRender={menuDataRender}
       {...props}
+      {...settings}
     >
-      <WaterMark content="微の商城">{children}</WaterMark>
+      {children}
     </ProLayout>
   );
 };
